@@ -105,16 +105,16 @@ $days = floor($difference / 86400);
 	</row>
 	<row>
 		<div class="col-sm-2 col-sm-offset-3 col-md-4 information top-margin-text col-md-offset-2">
-			<div class="col-sm-7">
-			<img src="images/appTime.jpg" class="top-margin img-responsive"></img>
-			</div>
-			<div class="col-sm-1">
-			<p class="countdown"><?php echo $days; ?></p>
+			
+			<div class="col-sm-6 col-sm-offset-5">
+			<p class="sameline">Coming live in<h2 class="countdown"><?php echo $days; ?></h2> <p class="sameline">days.</p>
 			</div>
 			
 		</div>
 		<div class="col-sm-3 col-sm-offset-1 col-md-4 information top-margin-text">
-			<p class="information facebook">visit our facebook page for more information</p>
+			<p class="information facebook">visit our facebook page for more information
+			<a href="https://www.facebook.com/Tabula-Rasa-234512806881506/?fref=ts">TabulaRasa</a>
+			</p>
 			<h5 class="information facebook team"> - MostWantedProgrammers</h5>
 		</div>
 	</row>

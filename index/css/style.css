@@ -98,7 +98,7 @@ body{
 }
 .facebook{
 	font-weight:200;
-	font-size:14px;
+	font-size:16px;
 	position:relative;
 	text-align:right;
 
@@ -115,12 +115,46 @@ body{
 	text-align:right;
 	position:relative;
 }
+.sameline{
+	display: inline;
+    vertical-align: top;
+    font-size:24px;
+    text-align:center;
+}
 .countdown{
-	font-size:106px;
-
-
+	font-size:46px;
+	display: inline;
+    vertical-align: top;
+    font-weight:800;
+    line-height:0.7;
+    text-align:center;
+    -webkit-transition: ease-out 1s;
+    -moz-transition:  ease-out 1s;
+    -o-transition:  ease-out 1s;
+}
+.countdown:hover{
+	color:#ff1454;
+	-webkit-transition: ease-out 1s;
+    -moz-transition:  ease-out 1s;
+    -o-transition:  ease-out 1s;
 }
 
+a{
+	color:#fff;
+	font-weight:400;
+	-webkit-transition: ease-out 1s;
+    -moz-transition:  ease-out 1s;
+    -o-transition:  ease-out 1s;
+}
+a:hover{
+	-webkit-transition: ease-out 1s;
+    -moz-transition:  ease-out 1s;
+    -o-transition:  ease-out 1s;
+	color:#ff1454;
+	font-weight:800;
+	font-size:21px;
+	text-decoration:none;
+}
 
 /*==================================================
 =            Bootstrap 3 Media Queries             =
