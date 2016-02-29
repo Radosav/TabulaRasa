@@ -8,7 +8,7 @@ include "connect.php";
  */
 
 class Users extends Database{
-    static public function CreateUser($email,$password){
+    public static function CreateUser($email,$password){
         $id = parent::query("SELECT COUNT(id) FROM users");
         var_dump($id);
     }

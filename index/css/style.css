@@ -4,93 +4,16 @@ body{
 	font-family: 'Roboto', sans-serif;
 	position:relative;
 }
-.col-md-6{
-	display:inline-block;
-	width:50%;
-}
-
-.space{
-	height:150px;
-
-}
-
-.small-text{
-	font-size:9px;
-	font-weight:100;
-	text-align:center;
-	margin-bottom:-1px;
-}
-.medium-text{
-	font-size:11px;
-	font-weight:300;
-	text-align:center;
-	margin-bottom:-2px;
-}
-.medium-title-text{
-	font-size:14px;
-	font-weight:400;
-	text-align:center;
-
-	border-bottom-style:solid;
-	border-bottom-width:3px;
-
-}
-.draw-line{
-	margin-top:2%;
-	border-bottom-style:solid;
-	border-bottom-width:4px;
-	height:20px;
-	
-	margin-left:17%;
-
-}
-.draw-line.left-line{
-
-	float:left;
-	position:relative;
-}
-.draw-line.right-line{
-	float:left;
-	position:relative;
-}
-
-.btn.btn-danger{
-  width: 200px;
-  height: 200px;
-  padding: 10px 16px;
-  font-size: 144px;
-  line-height: 1.33;
-  border-radius: 100px;
-  color:#a70632;
-  background-color:#fff;
-  margin-left:;
-}
-.straight-line
-{
-	height:125px;
-	margin-left:0px !important;
-	margin-right:0px !important;
-	margin-top:-13px;
-
-	border-right-style:solid;
-	border-right-width:3px;
-}
-.text-float-right{
-	float:right;
-}
-
-
-.top-margin{
-	margin-top:25px;
-	display:block;
-	margin-left:auto;
-	margin-right:auto;
-}
-
 .information{
 	font-family:'Roboto', sans-serif;
 	font-size:14px;
 	display:inline-block;
+	text-align: center;
+}
+
+.information p {
+	text-align: center;
+	display: block;
 }
 
 .top-margin-text{
@@ -155,85 +78,3 @@ a:hover{
 	font-size:21px;
 	text-decoration:none;
 }
-
-/*==================================================
-=            Bootstrap 3 Media Queries             =
-==================================================*/
-
-
-
-
-/*==========  Non-Mobile First Method  ==========*/
-
-    /* Large Devices, Wide Screens */
-    @media only screen and (max-width : 1200px) {
-    	img{
-    		width:100%;
-    		display:block;
-    		margin:auto;
-
-    	}
-    	.information{
-		font-family:'Roboto', sans-serif;
-		font-size:14px;
-		display:inline-block;
-		}
-    }
-
-    /* Medium Devices, Desktops */
-    @media only screen and (max-width : 992px) {
-    	img{
-    		width:100%;
-    		display:block;
-    		margin:auto !important;
-    	}
-    	.information{
-	font-family:'Roboto', sans-serif;
-	font-size:10px;
-	display:inline-block;
-}
-    }
-
-    /* Small Devices, Tablets */
-    @media only screen and (max-width : 768px) {
-    	img{
-    		width:100%;
-    	}
-    	.information{
-	font-family:'Roboto', sans-serif;
-	font-size:8px;
-	display:inline-block;
-		}
-		.information.facebook{
-			font-size:8px;
-			
-		}
-		.information.facebook.team{
-			font-size:12px;
-			
-		}
-    }
-
-    /* Extra Small Devices, Phones */ 
-    @media only screen and (max-width : 480px) {
-    	img{
-    		width:100%;
-    	}
-    	.information{
-	font-family:'Roboto', sans-serif;
-	font-size:8px;
-	display:inline-block;
-}
-    }
-
-    /* Custom, iPhone Retina */ 
-    @media only screen and (max-width : 320px) {
-    	img{
-    		width:100%;
-    	}
-        .information .facebook{
-	font-family:'Roboto', sans-serif;
-	font-size:6px;
-	display:inline-block;
-		}
-    }

@@ -6,8 +6,9 @@
  * Time: 16.21
  */
 	class Database {
-		private $link;
+		protected $link;
 		private $host,$username,$password,$database;
+
 		// Constructor for class Database
 		// This creates a link to the database and allows the user to execute a query
 		public function __construct($host,$username,$password,$database){
@@ -30,10 +31,10 @@
 			$this->link = null;
 		}
 
-
 		// Executes a query to the Database, this method should only be used inside of model classes
 		protected function query($query) {
-			$result = $this->link->query($query);
+			$link = $this->link;
+			$result = $link->query($query);
 
 			if (!$result) die('Invalid query: ' . mysql_error());
 			return $result;
