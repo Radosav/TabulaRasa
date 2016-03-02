@@ -21,7 +21,7 @@
 
             .container {
                 text-align: center;
-                padding-top:20px;
+                padding: 20px 10% 0px;
             }
 
             .content {
@@ -42,6 +42,10 @@
                 font-size: 32px;
             }
 
+            .timer {
+                margin-bottom: 40px;
+            }
+
             .countdown {
                 font-weight: bold;
             }
@@ -51,10 +55,13 @@
         <div class="container">
             <div class="content">
                 <div class="title"><a href="https://www.facebook.com/Tabula-Rasa-234512806881506/">Tabula Rasa</a></div>
-                <div class="desc">
+                <div class="desc timer">
                     Coming in 
                         <span class="countdown"><?php echo floor((mktime(0,0,0,03,26,2016) - time())/ 86400); ?></span > 
                     days
+                </div>
+                <div class="desc">
+                    TabulaRasa aims to assist teachers in making lectures easier, faster and simpler so that students can learn more efficiently over the internet.
                 </div>
             </div>
         </div>
