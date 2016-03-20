@@ -11,12 +11,14 @@
 |
 */
 
-Route::get('/', function () {
-    return view('comingSoon');
-});
+// Route::get('/', function () {
+//     return view('comingSoon');
+// });
 
-// Route::get('/about/people',"AboutController@people");
-// Route::get('/about/project',"AboutController@project");
+Route::post('/lectures/store',"LectureController@store");
+Route::post('/lecture/{id}/delete',"LectureController@destory");
+
+
 
 
 /*
@@ -30,8 +32,12 @@ Route::get('/', function () {
 |
 */
 
+
 Route::group(['middleware' => 'web'], function () {
     Route::auth();
 
-    Route::get('/home', 'HomeController@index');
+    Route::get('lecture/{id}', 'LectureController@lecture');
+	Route::get('create', 'LectureController@create');
+
+	Route::get('/', 'LectureController@index');
 });
