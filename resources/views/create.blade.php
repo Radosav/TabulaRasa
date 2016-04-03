@@ -45,6 +45,12 @@
 
 @section('footer')
     <script type="text/javascript">
+        CKEDITOR.replace('text[0][]');
+    </script>
+
+
+
+    <script type="text/javascript">
         jQuery(document).ready(function(){
              $("#selectable").selectable({
                filter: "li"
@@ -56,6 +62,7 @@
             i++;
             var selection = '<li class="form-group itteration-'+i+' selectable"><input name="title['+i+'][]" type="text" placeholder="Subtitle" onfocus="this.placeholder =\'\' " onblur="this.placeholder = \'Subtitle\'"  class="form-control title lecture_subtitle"/><textarea   name="text['+i+'][]" class="form-control lecture_part" placeholder="Text"/></li>'
             jQuery(selection).insertBefore(".formControls");
+            CKEDITOR.replace('text['+i+'][]');
         }
     </script>
 @endsection
