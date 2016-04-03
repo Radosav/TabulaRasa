@@ -20,6 +20,7 @@
     <!-- Scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.5.2/jquery-ui.min.js"></script>
+    <script src="//cdn.ckeditor.com/4.5.8/standard/ckeditor.js"></script>
 
     <style>
         body {
