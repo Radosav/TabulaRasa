@@ -1,4 +1,4 @@
-<?php 
+    <?php 
     if(Auth::check()){
         $user = Auth::user();
     }else{
@@ -8,6 +8,7 @@
 @extends('layouts.app')
 
 @section('content')
+
 <div class="container">
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
@@ -26,7 +27,7 @@
                                     <textarea name="text[0][]" class="form-control lecture_part" placeholder="Text"></textarea>
                                 </li>
 
-                                <div class="form-group formControls">
+                                <div class="form-group formControls"    >
                                     <a class="btn btn-primary" onclick="addSelection()">Add Section</a>
                                     <a class="btn btn-primary">Add Question</a>
                                     <a class="btn btn-primary">Add Answer</a>
@@ -45,9 +46,9 @@
 @section('footer')
     <script type="text/javascript">
         jQuery(document).ready(function(){
-            jQuery("#selectable").draggable({
-              filter: "li"
-            });
+             $("#selectable").selectable({
+               filter: "li"
+             });
         });
 
         var i = 0;
