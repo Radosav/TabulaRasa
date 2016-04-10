@@ -47,7 +47,7 @@
 
 @section('footer')
 <script type="text/javascript">
-        function deleteLecture(lid)
+        function deleteLecture(lid){
             jQuery.ajax({
                 type:"POST",
                 url:"/lecture/" + lid + "/delete",
@@ -56,5 +56,6 @@
                     jQuery('#lecture-' + lid).remove();
                 }
             })
+        }
     </script>
 @endsection

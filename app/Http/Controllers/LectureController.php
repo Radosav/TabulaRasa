@@ -6,6 +6,8 @@ use Auth;
 use App\User;
 use App\Lecture;
 use App\Lecture_part;
+use App\Question;
+use App\Answer;
 
 use Illuminate\Http\Request;
 use App\Http\Requests;
@@ -37,27 +39,43 @@ class LectureController extends Controller
         
         $titles = $request->title;
         $texts = $request->text;
-
-
-        
+        $questions = $request->question;
+        $answers = $request->answer;
 
         $lecture = new Lecture;
 
-        $lecture->title = $titles[0][0];
+        $lecture->title = $titles[0];
         
         $lecture->save();
-
+        echo "<pre>";
         $count = count($titles);
         for($i = 0; $i < $count; $i++) {
-            $lecture->lecture_parts()->save( new Lecture_part(
-                    ['title' => $titles[$i][0],'text'=> $texts[$i][0]]
-            ));
+            $lecture_part = new Lecture_part(
+                ['title' => $titles[$i],'text'=> $texts[$i]]
+            );
+            $lecture->lecture_parts()->save($lecture_part);
+            if (!empty($questions[$i][0])) {
+                $questions_count = count($questions[$i]);
+                for($q = 0; $q < $questions_count; $q++) {
+                    $question = new Question(['question' => $questions[$i][$q]]);
+                    $lecture_part->questions()->save($question);
+                    if (!empty($answers[$i][$q][0])) {
+                        $answer_count = count($answers[$i][$q]);
+                        for($a = 0; $a < $answer_count; $a++) {
+                            $answer = new Answer(['answer' => $answers[$i][$q][$a]]);
+                            $question->answers()->save($answer);
+                        }
+                    }
+                    $lecture_part->questions()->save($question);
+                }
+                $lecture->lecture_parts()->save($lecture_part);
+            }
         }
+        $lecture->save();
         if ($request->uid != null) {
             User::find($request->uid)->lectures()->save($lecture);
         }
        
-
         return redirect('lecture/'.$lecture->id);
     }
 
