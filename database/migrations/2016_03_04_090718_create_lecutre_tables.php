@@ -45,6 +45,7 @@ class CreateLecutreTables extends Migration
             $table->increments('id');
             $table->integer('question_id')->unsigned()->index();
             $table->string('answer');
+            $table->boolean('right');
             $table->timestamps();
 
             $table->foreign('question_id')->references('id')->on('questions')->onDelete('cascade');
