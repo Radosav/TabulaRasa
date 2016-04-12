@@ -31,7 +31,11 @@
                                             <input type="text" name="question[0][0]"></input>
                                             <p>Answers:</p>
                                             <ul class="answers">
-                                                <li class="answer"><input class="answer-0" name="answer[0][0][0]"></input></li>
+                                                <li class="answer">
+                                                    <input class="answer-0" name="answer[0][0][0]"></input>
+                                                    <input type="checkbox" class="correct" name="correct[0][0][0]" />
+                                                    <label for="correct[0][0][0]">Correct?</label>
+                                                </li>
                                             </ul>
                                             <div class="form-group formControls">
                                                 <a class="btn btn-primary" onclick="addAnswer(0,0,this)">Add Answer</a>
@@ -100,7 +104,11 @@
 
         function addAnswer(pid,qid,me) {
             var ai = jQuery(me).parent().parent().children("ul.answers").children("li.answer").length;
-            var answer = '<li class="answer"><input class="answer-'+ai+'" name="answer['+pid+']['+qid+']['+ai+']"></input></li>';
+            var answer = '<li class="answer">';
+                answer +=   '<input class="answer-'+ai+'" name="answer['+pid+']['+qid+']['+ai+']"></input>';
+                answer +=   '<input type="checkbox" class="correct" name="correct['+pid+']['+qid+']['+ai+']" />';
+                answer +=   '<label for="correct['+pid+']['+qid+']['+ai+']">Correct?</label>';
+                answer +='</li>';
             jQuery(".question-"+qid).find(".answers").append(answer);
         }
     </script>
