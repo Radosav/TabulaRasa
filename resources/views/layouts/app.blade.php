@@ -103,7 +103,7 @@
     @yield('content')
 
     <!-- JavaScripts -->
-    <script src="//cdn.ckeditor.com/4.5.8/standard/ckeditor.js"></script>
+    <script src="//cdn.ckeditor.com/4.5.8/full-all/ckeditor.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
