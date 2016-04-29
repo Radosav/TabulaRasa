@@ -123,7 +123,4 @@ li .answer{
 .list-group-item{
 	color:#C9C9C9;
 }
-.list-group-item:hover{
-	font-weight:bold;
-	text-decoration:none;
-}
+.list-group-item:hover{font-weight:bold; text-decoration:none;}
