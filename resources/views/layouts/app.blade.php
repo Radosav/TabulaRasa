@@ -42,6 +42,11 @@
         input.input-question{
             margin-left:5px;
         }
+        .full-width{
+            width:80%;
+            margin-right:10px; 
+            margin-bottom:10px;
+        }
         input[type='checkbox']{
             width: auto;
             margin-right: 10px;
@@ -157,7 +162,6 @@
             .answers {
                 list-style: none;
                 margin: 0px;
-                padding: 0 5px;
             }
 
             ul.answers li {

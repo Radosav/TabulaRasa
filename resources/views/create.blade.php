@@ -28,11 +28,11 @@
                                     <div class="questions">
                                         <div class="question question-0">
                                             <p>Question:</p>
-                                            <input type="text" name="question[0][0]"></input>
+                                            <input type="text" class="full-width" name="question[0][0]"></input>
                                             <p>Answers:</p>
                                             <ul class="answers">
                                                 <li class="answer">
-                                                    <input class="answer-0" name="answer[0][0][0]"></input>
+                                                    <input class="full-width answer-0" name="answer[0][0][0]"></input>
                                                     <input type="checkbox" class="correct" name="correct[0][0][0]" />
                                                     <label for="correct[0][0][0]">Correct?</label>
                                                 </li>
@@ -90,7 +90,7 @@
             var qi = jQuery(me).parent().parent().children("div.question").length;
             var question =  '<div class="question question-'+qi+'">';
                 question +=     '<p>Question:</p>';
-                question +=     '<input type="text" name="question['+pid+']['+qi+']"/>';
+                question +=     '<input type="text" class="full-width" name="question['+pid+']['+qi+']"/>';
                 question +=     '<p>Answers:</p>';
                 question +=     '<ul class="answers">';
                 question +=     '</ul>';
@@ -105,7 +105,7 @@
         function addAnswer(pid,qid,me) {
             var ai = jQuery(me).parent().parent().children("ul.answers").children("li.answer").length;
             var answer = '<li class="answer">';
-                answer +=   '<input class="answer-'+ai+'" name="answer['+pid+']['+qid+']['+ai+']"></input>';
+                answer +=   '<input class="full-width answer-'+ai+'" name="answer['+pid+']['+qid+']['+ai+']"></input>';
                 answer +=   '<input type="checkbox" class="correct" name="correct['+pid+']['+qid+']['+ai+']" />';
                 answer +=   '<label for="correct['+pid+']['+qid+']['+ai+']">Correct?</label>';
                 answer +='</li>';
