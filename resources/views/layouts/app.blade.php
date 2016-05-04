@@ -14,6 +14,8 @@
     <!-- Styles -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
     {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
+    <link rel="stylesheet" type="text/css" href="/public/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/public/css/css.css">
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
 
     <!-- Scripts -->
@@ -48,6 +50,25 @@
 
         .lecture_part {
             resize: vertical;
+        }
+
+        .question {
+            padding: 10px;
+            border: 1px solid #ddd;
+            margin: 10px 0;
+        }
+        .answers {
+            list-style: none;
+            margin: 0px;
+            padding: 0 5px;
+        }
+        .answers input:not([type="checkbox"]) {
+            border: none;
+            width: 96%;
+            display: inline-block;
+        }
+        .answers .answer {
+            border: 1px solid #ddd;
         }
     </style>
 

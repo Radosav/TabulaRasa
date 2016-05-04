@@ -37,6 +37,7 @@ Route::group(['middleware' => 'web'], function () {
     Route::auth();
 
     Route::get('lecture/{id}', 'LectureController@lecture');
+    Route::get('lecture/{id}/edit', 'LectureController@edit');
 	Route::get('create', 'LectureController@create');
 
 	Route::get('/', 'LectureController@index');

@@ -554,6 +554,17 @@ class Collection implements ArrayAccess, Arrayable, Countable, IteratorAggregate
     }
 
     /**
+     * Union the collection with the given items.
+     *
+     * @param  mixed  $items
+     * @return void
+     */
+    public function union($items)
+    {
+        return new static($this->items + $this->getArrayableItems($items));
+    }
+
+    /**
      * Get the min value of a given key.
      *
      * @param  string|null  $key
@@ -1010,7 +1021,6 @@ class Collection implements ArrayAccess, Arrayable, Countable, IteratorAggregate
     {
         return array_map(function ($value) {
             return $value instanceof Arrayable ? $value->toArray() : $value;
-
         }, $this->items);
     }
 

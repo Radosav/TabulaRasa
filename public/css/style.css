@@ -1,0 +1,10 @@
+.question {
+    padding: 10px;
+    border: 1px solid #ddd;
+    margin: 10px 0;
+}
+.answers {
+    list-style: none;
+    margin: 0px;
+    padding: 0 5px;
+}
