@@ -27,7 +27,7 @@
                                                         <li class="margin-fix">
                                                             <?php echo $lecture->lecture_parts[$i]->questions[$q]->answers[$a]->answer; ?>
                                                                 <input type="radio" class="correct <?php if($lecture->lecture_parts[$i]->questions[$q]->answers[$a]->right) echo "correct"; ?>"
-                                                                 name="question-<?php echo $q; ?>" style="float:right">
+                                                                 name="question-<?php echo $q; ?>">
                                                                  
 
                                                             </input>

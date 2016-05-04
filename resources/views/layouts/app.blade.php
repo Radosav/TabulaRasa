@@ -67,6 +67,7 @@
             .lecture_subtitle {
                 text-align: left;
                 font-size: 20px;
+                padding:10px;
             }
 
             .lecture_part {
@@ -197,6 +198,8 @@
             .margin-fix { 
                 margin-left:10px;
                 margin-bottom:10px;
+                float:left;
+                display:inline;
             }
 
             h4.dashboard {
