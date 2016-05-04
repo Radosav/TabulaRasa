@@ -23,53 +23,191 @@
 
 
     <style>
-        body {
+         body{
+            background-color:#fff;
             font-family: 'Lato';
+            -webkit-transition: all 1s ease-in-out;
+            -moz-transition: all 1s ease-in-out;
+            -o-transition: all 1s ease-in-out;
+            transition: all 1s ease-in-out;
         }
+        a:hover{
+            font-weight:bold;
+            text-decoration:none;
+        }
+        ul{
+            list-style-type:none;
+            padding:0px;
+        }
+        input{
+            width:80%;
+        }
+        input.input-question{
+            margin-left:5px;
+        }
+        input[type='checkbox']{
+            width:5%;
+        }
+            .fa-btn {
+                margin-right: 6px;
+            }
 
-        .fa-btn {
-            margin-right: 6px;
-        }
+
+            .title {
+                text-align: center;
+                border: none;
+                box-shadow: none;
+                height: auto;
+            }
+
+            .lecture_title {
+                font-size: 26px;
+            }
+
+            .lecture_subtitle {
+                text-align: left;
+                font-size: 20px;
+            }
+
+            .lecture_part {
+                resize: vertical;
+         }
+
+            .navbar-default li{
+                color:#fff;
+            }
+
+            .navbar-default{
+                background-color:#2F3E7B;
+            }
+
+            .navbar-default .navbar-brand{
+                color:#fff;
+                -webkit-transition:color 0.5s ease-in-out;
+                -webkit-transition:background-color 0.5s ease-in-out;
+            }
+            .navbar-default .navbar-brand:hover{
+                color:#2F3E7B;
+                background-color:#fff;
+                -webkit-transition:color 0.5s ease-in-out;
+                -webkit-transition:background-color 0.5s ease-in-out;
+            }
+
+            .navbar-default .navbar-nav>li>a{
+                color:#fff;
+            }
+
+            .navbar-default .navbar-toggle .icon-bar{
+                background-color:#fff;
+            }
+
+            .navbar-default .navbar-nav>li>a:focus, 
+            .navbar-default .navbar-nav>li>a:hover{
+                color:#fff;
+            }
+
+            .panel-default>.panel-heading{
+                border-color:#2F3E7B;
+                background-color:#2F3E7B;
+            }
+
+            .panel-default h4{
+                color:#2F3E7B;
+            }
+
+            .panel-default>.panel-heading{
+                color:#fff;
+            }
+
+            label.col-md-4.control-label{
+                color:#7F95A9;
+            }
+
+            .btn-primary{
+                background-color:#2F3E7B;
+                border-color:#fff;
+                -webkit-transition:background-color 0.5s ease-in-out;
+            }
+
+            .btn-primary:hover{
+                background-color:#fff;
+                border-color:#2F3E7B;
+                color:#2F3E7B;
+            }
+
+            .answer{
+                margin:auto;
+            }
+
+            li .answer{
+                margin-bottom:10px;
+            }
+
+            .form-control:focus{
+                border-color:#2F3E7B;
+                box-shadow: inset 0 1px 1px rgba(169, 197, 211,0.6);
+            }
+
+            .question {
+                padding: 10px;
+                border: 1px solid #C9C9C9;
+                margin: 10px 0;
+                background-color:#fbfbfb;
+            }
+            .answers {
+                list-style: none;
+                margin: 0px;
+                padding: 0 5px;
+            }
+            .list-group-item{
+                color:#C9C9C9;
+            }
+            .list-group-item:hover{font-weight:bold; text-decoration:none;}
+            body {
+                font-family: 'Lato';
+            }
+
+            .fa-btn {
+                margin-right: 6px;
+            }
 
 
-        .title {
-            text-align: center;
-            border: none;
-            box-shadow: none;
-            height: auto;
-        }
+            .title {
+                text-align: center;
+                border: none;
+                box-shadow: none;
+                height: auto;
+            }
 
-        .lecture_title {
-            font-size: 26px;
-        }
+            .lecture_title {
+                font-size: 26px;
+            }
 
-        .lecture_subtitle {
-            text-align: left;
-            font-size: 20px;
-        }
+            .lecture_subtitle {
+                text-align: left;
+                font-size: 20px;
+            }            
 
-        .lecture_part {
-            resize: vertical;
-        }
+            .lecture_part {
+                resize: vertical;
+                margin: 30px 0;
+                padding-bottom: 30px;
+                border-bottom: 1px solid #eee;
+            }
+            .margin-fix { 
+                margin-left:10px;
+                margin-bottom:10px;
+            }
 
-        .question {
-            padding: 10px;
-            border: 1px solid #ddd;
-            margin: 10px 0;
-        }
-        .answers {
-            list-style: none;
-            margin: 0px;
-            padding: 0 5px;
-        }
-        .answers input:not([type="checkbox"]) {
-            border: none;
-            width: 96%;
-            display: inline-block;
-        }
-        .answers .answer {
-            border: 1px solid #ddd;
-        }
+            h4.dashboard {
+                color: #fff;
+            }
+            .question-container{
+                padding:10px;
+                border:1px solid #eee;
+                margin-bottom:20px;
+            }
+
     </style>
 
     @yield('header')
