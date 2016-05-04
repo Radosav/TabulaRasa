@@ -70,10 +70,9 @@ class LectureController extends Controller
                     if (!empty($answers[$i][$q][0])) {
                         $answer_count = count($answers[$i][$q]);
                         for($a = 0; $a < $answer_count; $a++) {
-                            $answer = new Answer(['answer' => $answers[$i][$q][$a],'right' => $correct[$i][$q][$a] == "on" ? true : false]);
+                            $answer = new Answer(['answer' => $answers[$i][$q][$a]]);//,'right' => $correct[$i][$q][$a] == "on" ? true : false]);
                             $question->answers()->save($answer);
-                            echo "<pre>";
-                            var_dump($answer);die();
+
                         }
                     }
                     $lecture_part->questions()->save($question);

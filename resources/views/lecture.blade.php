@@ -10,28 +10,33 @@
                     <?php $count = count($lecture->lecture_parts); ?>
                     <?php for ($i=0; $i < $count; $i++): ?>
                         <div class="lecture_part <?php if($i != 0) {echo "sakriveniDeo";} ?>" style="<?php if($i != 0) {echo "display:none;";}   ?>">
-                            <p class="lecture_part_text"><?php echo $lecture->lecture_parts[$i]->text; ?></p>
                             <?php if($i != 0): ?>
                                 <h4 class="title lecture_subtitle"><?php echo $lecture->lecture_parts[$i]->title ?></h4>
                             <?php  endif; ?>
+                            <p class="lecture_part_text"><?php echo $lecture->lecture_parts[$i]->text; ?></p>
                             <div class="questions">
                                 <?php 
                                     $questions_count = count($lecture->lecture_parts[$i]->questions);
                                     for($q = 0; $q < $questions_count; $q++): ?>
-                                        <h4 class="question"><?php echo $lecture->lecture_parts[$i]->questions[$q]->question; ?></h4>
-                                        <?php $answer_count = count($lecture->lecture_parts[$i]->questions[$q]->answers); ?>
-                                        <ul class="answers">
-                                            <form>
-                                                <?php for($a = 0; $a < $answer_count; $a++): ?>
-                                                    <li>
-                                                        <input type="radio" name="question-<?php echo $q; ?>">
+                                        <div class="question-container">
+                                            <h4 class="question"><?php echo $lecture->lecture_parts[$i]->questions[$q]->question; ?></h4>
+                                            <?php $answer_count = count($lecture->lecture_parts[$i]->questions[$q]->answers); ?>
+                                            <ul class="answers">
+                                                <form>
+                                                    <?php for($a = 0; $a < $answer_count; $a++): ?>
+                                                        <li class="margin-fix">
                                                             <?php echo $lecture->lecture_parts[$i]->questions[$q]->answers[$a]->answer; ?>
-                                                        </input>
-                                                    </li>
-                                                <?php endfor; ?>
-                                            </form>
-                                            <button class="Answer" onclick="NextPart()">Answer</button>
-                                        </ul>
+                                                                <input type="radio" class="correct <?php if($lecture->lecture_parts[$i]->questions[$q]->answers[$a]->right) echo "correct"; ?>"
+                                                                 name="question-<?php echo $q; ?>" style="float:right">
+                                                                 
+
+                                                            </input>
+                                                        </li>
+                                                    <?php endfor; ?>
+                                                </form>
+                                                <button class="Answer" onclick="NextPart()">Answer</button>
+                                            </ul>
+                                        </div>
                                 <?php endfor; ?>
                             </div>
                         </div>
@@ -50,7 +55,7 @@
 
 <script type="text/javascript">
     function NextPart() {
-        jQuery(".sakriveniDeo").first().fadeIn().removeClass('sakriveniDeo');
+        jQuery(".sakriveniDeo").first().fadeIn(1000).removeClass('sakriveniDeo');
     }
 </script>
 
