@@ -25,10 +25,9 @@
                                                 <form>
                                                     <?php for($a = 0; $a < $answer_count; $a++): ?>
                                                         <li class="margin-fix">
+                                                            <input type="radio" class="<?php if($lecture->lecture_parts[$i]->questions[$q]->answers[$a]->right) echo "correct"; ?>"
+                                                             name="question-<?php echo $q; ?>"></input>
                                                             <?php echo $lecture->lecture_parts[$i]->questions[$q]->answers[$a]->answer; ?>
-                                                                <input type="radio" class="<?php if($lecture->lecture_parts[$i]->questions[$q]->answers[$a]->right) echo "correct"; ?>"
-                                                                 name="question-<?php echo $q; ?>">
-                                                            </input>
                                                         </li>
                                                     <?php endfor; ?>
                                                 </form>

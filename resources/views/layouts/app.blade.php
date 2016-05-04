@@ -39,15 +39,14 @@
             list-style-type:none;
             padding:0px;
         }
-        input{
-            width:80%;
-        }
         input.input-question{
             margin-left:5px;
         }
         input[type='checkbox']{
-            width:5%;
+            width: auto;
+            margin-right: 10px;
         }
+
             .fa-btn {
                 margin-right: 6px;
             }
@@ -160,6 +159,16 @@
                 margin: 0px;
                 padding: 0 5px;
             }
+
+            ul.answers li {
+                display: block;
+                width: 100%;
+            }
+
+            ul.answers li input[type="radio"] {
+                width: auto;
+                margin-right: 10px;
+            }
             .list-group-item{
                 color:#C9C9C9;
             }
@@ -199,7 +208,6 @@
                 margin-left:10px;
                 margin-bottom:10px;
                 float:left;
-                display:inline;
             }
 
             h4.dashboard {
@@ -209,6 +217,9 @@
                 padding:10px;
                 border:1px solid #eee;
                 margin-bottom:20px;
+            }
+            form{
+                overflow:hidden;
             }
 
     </style>
