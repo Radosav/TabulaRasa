@@ -101,7 +101,6 @@ class LectureController extends Controller
                 $lecture->lecture_parts()->save($lecture_part);
             }
         }
-        
         $lecture->save();
         if ($request->uid != null) {
             User::find($request->uid)->lectures()->save($lecture);
