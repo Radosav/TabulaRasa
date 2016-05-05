@@ -300,7 +300,19 @@
         height: 100px;
         font-size: 3em;
         font-weight: 200;
-    } 
+    }
+
+    .panel,
+    .panel-body{
+      padding-left:0;
+      padding-right:0;
+    }
+
+    ul#selectable > li.form-group {
+      padding: 0 30px;
+      border-bottom: 1px solid #eee;
+    }
+
 
 </style>
 
