@@ -32,7 +32,7 @@
                                             <p>Answers:</p>
                                             <ul class="answers">
                                                 <li class="answer">
-                                                    <input class="full-width answer-0" name="answer[0][0][0]"></input>
+                                                    <input class="full-width-answer answer-0" name="answer[0][0][0]"></input>
                                                     <input type="checkbox" class="correct" name="correct[0][0][0]" />
                                                     <label for="correct[0][0][0]">Correct?</label>
                                                 </li>
@@ -53,12 +53,12 @@
                                     </div>
                                 </div>  
                             </ul>
-                        </form>
-                </div>
-            </div>
-            <div class="centered">
-                    <button type="submit" class="btn btn-primary completeLecture">Complete</button>
-            </div>
+                        </div>
+                    </div>
+                    <div class="centered">
+                            <button type="submit" class="btn btn-primary completeLecture">Complete</button>
+                    </div>
+             </form>
         </div>
     </div>
 </div>
@@ -109,7 +109,7 @@
         function addAnswer(pid,qid,me) {
             var ai = jQuery(me).parent().parent().children("ul.answers").children("li.answer").length;
             var answer = '<li class="answer">';
-                answer +=   '<input class="full-width answer-'+ai+'" name="answer['+pid+']['+qid+']['+ai+']"></input>';
+                answer +=   '<input class="full-width-answer answer-'+ai+'" name="answer['+pid+']['+qid+']['+ai+']"></input>';
                 answer +=   '<input type="checkbox" class="correct" name="correct['+pid+']['+qid+']['+ai+']" />';
                 answer +=   '<label for="correct['+pid+']['+qid+']['+ai+']">Correct?</label>';
                 answer +='</li>';

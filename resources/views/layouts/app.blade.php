@@ -43,7 +43,12 @@
         margin-left:5px;
     }
     .full-width{
-        width:80%;
+        width:100%;
+        margin-right:10px; 
+        margin-bottom:10px;
+    }
+    .full-width-answer{
+        width:85%;
         margin-right:10px; 
         margin-bottom:10px;
     }
