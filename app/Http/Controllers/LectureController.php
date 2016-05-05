@@ -49,12 +49,7 @@ class LectureController extends Controller
         $questions = $request->question;
         $answers = $request->answer;
         $correct = $request->correct;
-
-        echo "<pre>";
-        // var_dump($correct);
-
-        // echo "\n\n\n\n\n\n\n####################\n";
-
+        
         $lecture = new Lecture;
 
         $lecture->title = $titles[0];
@@ -100,7 +95,7 @@ class LectureController extends Controller
                 }
                 $lecture->lecture_parts()->save($lecture_part);
             }
-        }
+        }   
         $lecture->save();
         if ($request->uid != null) {
             User::find($request->uid)->lectures()->save($lecture);

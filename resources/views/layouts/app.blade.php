@@ -215,8 +215,6 @@
         resize: vertical;
         margin: 30px 0;
         padding-bottom: 30px;
-        padding-left: 30px;
-        padding-right: 30px;
         border-bottom: 1px solid #eee;
     }
     .margin-fix { 
@@ -313,14 +311,8 @@
         font-weight: 200;
     }
 
-    .panel,
-    .panel-body{
-      padding-left:0;
-      padding-right:0;
-    }
-
     ul#selectable > li.form-group {
-      padding: 0 30px;
+      //padding: 0 30px;
       border-bottom: 1px solid #eee;
     }
 
