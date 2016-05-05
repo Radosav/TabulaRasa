@@ -50,6 +50,11 @@ class LectureController extends Controller
         $answers = $request->answer;
         $correct = $request->correct;
 
+        echo "<pre>";
+        // var_dump($correct);
+
+        // echo "\n\n\n\n\n\n\n####################\n";
+
         $lecture = new Lecture;
 
         $lecture->title = $titles[0];
@@ -67,10 +72,15 @@ class LectureController extends Controller
                 for($q = 0; $q < $questions_count; $q++) {
                     $question = new Question(['question' => $questions[$i][$q]]);
 
-                    echo "<pre>";
+                    
                     if (isset($correct[$i][$q])) {
                         $correct_count = count($correct[$i][$q]);
-                        var_dump($correct,$correct_count); 
+                        if ($correct_count > 1) {
+                            $question->isMultiple = true;
+                        }
+                        else{
+                            $question->isMultiple = false;
+                        }
                     }
 
                     $lecture_part->questions()->save($question);
@@ -90,8 +100,8 @@ class LectureController extends Controller
                 }
                 $lecture->lecture_parts()->save($lecture_part);
             }
-            die();
         }
+        
         $lecture->save();
         if ($request->uid != null) {
             User::find($request->uid)->lectures()->save($lecture);

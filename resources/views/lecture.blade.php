@@ -25,14 +25,13 @@
                                                 <form>
                                                     <?php for($a = 0; $a < $answer_count; $a++): ?>
                                                         <li class="margin-fix">
-                                                            <input type="radio" class="<?php if($lecture->lecture_parts[$i]->questions[$q]->answers[$a]->right) echo "correct"; ?>"
-                                                             name="question-<?php echo $q; ?>"></input>
+                                                            <input type="<?php if($lecture->lecture_parts[$i]->questions[$q]->isMultiple){ echo 'checkbox';} else { echo 'radio'; }?>" class="<?php if($lecture->lecture_parts[$i]->questions[$q]->answers[$a]->right) echo "correct"; ?> answer" name="<?php echo "question-" . $q ?>"></input>
                                                             <?php echo $lecture->lecture_parts[$i]->questions[$q]->answers[$a]->answer; ?>
                                                         </li>
                                                     <?php endfor; ?>
                                                 </form>
                                                 <div class="centered">
-                                                    <button class="btn btn-primary Answer text-center" onclick="NextPart()">Answer</button>
+                                                    <button class="btn btn-primary answer-button text-center" onclick="NextPart()">Answer</button>
                                                 </div>
                                             </ul>
                                         </div>
@@ -43,7 +42,7 @@
                 </div>
             </div>
             <div class="center">
-                <button class="btn btn-primary endLecture sakriveniDeo">Lecture Finished</button>
+                <button class="btn btn-primary endLecture sakriveniDeo" onclick="window.location.href='/'">Lecture Finished</button>
             </div>
         </div>
     </div>
@@ -54,11 +53,31 @@
 
 <script type="text/javascript">
     function NextPart() {
-        if(jQuery(".question-container:not(.sakriveniDeo):visible").last().find("input[type='radio'].correct").is(":checked")){
-            jQuery(".sakriveniDeo").first().fadeIn(1000).removeClass('sakriveniDeo');
-        }
 
-        jQuery(".sakriveniDeo").first().fadeIn().removeClass('sakriveniDeo');
+        var next = true;
+        jQuery(".question-container:not(.sakriveniDeo):visible").last().find(".answer").each(function (index, value) {
+            if($(this).hasClass("correct")){
+                if(!$(this).is(":checked")){
+                    next = false;
+                    return false;
+                } 
+            }
+            if(!$(this).hasClass("correct")){
+                if($(this).is(":checked")){
+                    next = false;
+                    return false;
+                } 
+            }
+        });
+
+        if(next){
+            jQuery(".answer-button:visible").prop('disabled', true);
+            jQuery(".question-container:not(.sakriveniDeo):visible").last().find(".answers").removeClass("answered-incorrect");
+            jQuery(".question-container:not(.sakriveniDeo):visible").last().find(".answers").addClass("answered-correct");
+            jQuery(".sakriveniDeo").first().fadeIn(1000).removeClass('sakriveniDeo');
+        } else {
+            jQuery(".question-container:not(.sakriveniDeo):visible").last().find(".answers").addClass("answered-incorrect");
+        }
     }
 </script>
 

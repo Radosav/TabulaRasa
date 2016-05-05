@@ -14,8 +14,6 @@
     <!-- Styles -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
     {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
-    <link rel="stylesheet" type="text/css" href="/public/css/style.css">
-    <link rel="stylesheet" type="text/css" href="/public/css/css.css">
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
 
     <!-- Scripts -->
@@ -77,10 +75,6 @@
         text-align: left;
         font-size: 20px;
         padding:10px;
-    }
-
-    .lecture_part {
-        resize: vertical;
     }
 
     .navbar-default li{
@@ -150,8 +144,10 @@
         margin:auto;
     }
 
-    li .answer{
-        margin-bottom:10px;
+    li .answer {
+        margin-bottom: 0px;
+        vertical-align: sub;
+        margin-left: 5px;
     }
 
     .form-control:focus{
@@ -168,15 +164,17 @@
     .answers {
         list-style: none;
         margin: 0px;
+        padding: 10px;
     }
 
     ul.answers li {
         display: block;
         width: 100%;
-        box-shadow: inset 0 -2px 1px rgba(47,62,123,0.1);
-        padding-bottom:5px;
-        padding-left: 10px;
-        padding-top:5px;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 5px;
+        padding-top: 5px;
+        margin-bottom: 0px;
+        margin-left: 2px;
     }
 
     ul.answers li input[type="radio"] {
@@ -216,6 +214,8 @@
         resize: vertical;
         margin: 30px 0;
         padding-bottom: 30px;
+        padding-left: 30px;
+        padding-right: 30px;
         border-bottom: 1px solid #eee;
     }
     .margin-fix { 
@@ -272,17 +272,17 @@
         color:#2F3E7B;
     }
 
-    button.btn.btn-primary.Answer.text-center {
+    button.btn.btn-primary.answer-button.text-center {
         margin: 20px 0 10px;
         width: 50%;
         height: 50px;
     }
 
-    button.btn.btn-primary.Answer:focus{
+    button.btn.btn-primary.answer-button:focus{
         background-color:#2F3E7B;
         color:#fff;
     }
-    button.btn.btn-primary.Answer:focus:hover{
+    button.btn.btn-primary.answer-button:focus:hover{
         background-color:#fff;
         color:#2F3E7B;
     }
@@ -293,11 +293,13 @@
     .answered-correct{
         background-color: rgba(89, 249, 89, 0.4);
         -webkit-transition:background-color 0.3s ease-in-out;
+        border-radius: 9px;
     }
 
     .answered-incorrect{
-        background-color: rgba(249, 89 , 89, 0.4);
-        -webkit-transition:background-color 0.3s ease-in-out;
+        background-color: rgba(255, 0, 0, 0.5);
+        -webkit-transition: background-color 0.3s ease-in-out;
+        border-radius: 9px;
     }            
     button.btn.btn-primary.completeLecture {
         margin-bottom: 20px;
