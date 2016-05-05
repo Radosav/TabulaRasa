@@ -67,10 +67,10 @@ class LectureController extends Controller
                 for($q = 0; $q < $questions_count; $q++) {
                     $question = new Question(['question' => $questions[$i][$q]]);
 
-                    echo "<pre>";
+
                     if (isset($correct[$i][$q])) {
                         $correct_count = count($correct[$i][$q]);
-                        var_dump($correct,$correct_count); 
+
                     }
 
                     $lecture_part->questions()->save($question);
@@ -90,7 +90,6 @@ class LectureController extends Controller
                 }
                 $lecture->lecture_parts()->save($lecture_part);
             }
-            die();
         }
         $lecture->save();
         if ($request->uid != null) {

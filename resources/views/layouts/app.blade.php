@@ -146,6 +146,7 @@
         color:#2F3E7B;
     }
 
+
     .answer{
         margin:auto;
     }
@@ -276,6 +277,7 @@
         margin: 20px 0 10px;
         width: 50%;
         height: 50px;
+
     }
 
     button.btn.btn-primary.Answer:focus{
@@ -286,7 +288,9 @@
         background-color:#fff;
         color:#2F3E7B;
     }
-
+    .btn:focus{
+        outline:none;
+    }
     .centered{
         text-align:center;
     }
