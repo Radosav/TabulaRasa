@@ -36,8 +36,9 @@ class CreateLecutreTables extends Migration
             $table->increments('id');
             $table->integer('lecture_part_id')->unsigned()->index();
             $table->string('question');
-            $table->timestamps();
+            $table->boolean('isMultiple');
 
+            $table->timestamps();
             $table->foreign('lecture_part_id')->references('id')->on('lecture_parts')->onDelete('cascade');
         });
 

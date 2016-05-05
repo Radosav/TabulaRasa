@@ -226,6 +226,11 @@
                 overflow:hidden;
             }
 
+
+            .sakriveniDeo {
+                display: none;
+            }
+
     </style>
 
     @yield('header')

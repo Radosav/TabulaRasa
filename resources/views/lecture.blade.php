@@ -9,7 +9,7 @@
                     <h2 class="title lecture_title">{{$lecture->title}}</h2>
                     <?php $count = count($lecture->lecture_parts); ?>
                     <?php for ($i=0; $i < $count; $i++): ?>
-                        <div class="lecture_part <?php if($i != 0) {echo "sakriveniDeo";} ?>" style="<?php if($i != 0) {echo "display:none;";}   ?>">
+                        <div class="lecture_part <?php if($i != 0) {echo "sakriveniDeo";} ?>"> 
                             <?php if($i != 0): ?>
                                 <h4 class="title lecture_subtitle"><?php echo $lecture->lecture_parts[$i]->title ?></h4>
                             <?php  endif; ?>
@@ -18,7 +18,7 @@
                                 <?php 
                                     $questions_count = count($lecture->lecture_parts[$i]->questions);
                                     for($q = 0; $q < $questions_count; $q++): ?>
-                                        <div class="question-container">
+                                        <div class="question-container <?php if($q != 0) {echo "sakriveniDeo";} ?>">
                                             <h4 class="question"><?php echo $lecture->lecture_parts[$i]->questions[$q]->question; ?></h4>
                                             <?php $answer_count = count($lecture->lecture_parts[$i]->questions[$q]->answers); ?>
                                             <ul class="answers">
@@ -41,7 +41,7 @@
                 </div>
             </div>
             <div class="center">
-                <button class="endLecture">Lecture Finished</button>
+                <button class="endLecture sakriveniDeo">Lecture Finished</button>
             </div>
         </div>
     </div>
@@ -52,7 +52,9 @@
 
 <script type="text/javascript">
     function NextPart() {
-        jQuery(".sakriveniDeo").first().fadeIn(1000).removeClass('sakriveniDeo');
+        if(jQuery(".question-container:not(.sakriveniDeo):visible").last().find("input[type='radio'].correct").is(":checked")){
+            jQuery(".sakriveniDeo").first().fadeIn(1000).removeClass('sakriveniDeo');
+        }
     }
 </script>
 

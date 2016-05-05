@@ -66,21 +66,31 @@ class LectureController extends Controller
                 $questions_count = count($questions[$i]);
                 for($q = 0; $q < $questions_count; $q++) {
                     $question = new Question(['question' => $questions[$i][$q]]);
+
+                    echo "<pre>";
+                    if (isset($correct[$i][$q])) {
+                        $correct_count = count($correct[$i][$q]);
+                        var_dump($correct,$correct_count); 
+                    }
+
                     $lecture_part->questions()->save($question);
                     if (!empty($answers[$i][$q][0])) {
                         $answer_count = count($answers[$i][$q]);
                         for($a = 0; $a < $answer_count; $a++) {
                             $answer = new Answer(['answer' => $answers[$i][$q][$a]]);
+                            
                             if (isset($correct[$i][$q][$a])) {
                                 $answer->right = $correct[$i][$q][$a] == "on" ? true : false;
                             }
                             $question->answers()->save($answer);
                         }
+
                     }
                     $lecture_part->questions()->save($question);
                 }
                 $lecture->lecture_parts()->save($lecture_part);
             }
+            die();
         }
         $lecture->save();
         if ($request->uid != null) {
