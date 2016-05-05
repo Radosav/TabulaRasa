@@ -126,6 +126,7 @@
 
             label.col-md-4.control-label{
                 color:#7F95A9;
+                color:#2F3E7B;
             }
 
             .btn-primary{
@@ -167,6 +168,10 @@
             ul.answers li {
                 display: block;
                 width: 100%;
+                box-shadow: inset 0 -2px 1px rgba(47,62,123,0.1);
+                padding-bottom:5px;
+                padding-left: 10px;
+                padding-top:5px;
             }
 
             ul.answers li input[type="radio"] {
@@ -174,7 +179,7 @@
                 margin-right: 10px;
             }
             .list-group-item{
-                color:#C9C9C9;
+                color:#2F3E7B;
             }
             .list-group-item:hover{font-weight:bold; text-decoration:none;}
             body {
@@ -213,6 +218,12 @@
                 margin-bottom:10px;
                 float:left;
             }
+            .new{
+                padding-top: 12px;
+                padding-bottom:12px;
+                width:50%;
+                margin:10px;
+            }
 
             h4.dashboard {
                 color: #fff;
@@ -225,6 +236,67 @@
             form{
                 overflow:hidden;
             }
+
+            button.btn.btn-primary.endLecture {
+                margin-bottom: 20px;
+                width: 100%;
+                height: 100px;
+                font-size: 3em;
+                font-weight: 200;
+            }
+            button.btn.btn-primary.completeLecture:focus{
+                background-color:#2F3E7B;
+                color:#fff;
+            }
+
+            button.btn.btn-primary.completeLecture:focus:hover{
+                background-color:#fff;
+                color:#2F3E7B;
+            }        
+            button.btn.btn-primary.endLecture:focus{
+                background-color:#2F3E7B;
+                color:#fff;
+            }
+
+            button.btn.btn-primary.endLecture:focus:hover{
+                background-color:#fff;
+                color:#2F3E7B;
+            }
+
+            button.btn.btn-primary.Answer.text-center {
+                margin: 20px 0 10px;
+                width: 50%;
+                height: 50px;
+            }
+
+            button.btn.btn-primary.Answer:focus{
+                background-color:#2F3E7B;
+                color:#fff;
+            }
+            button.btn.btn-primary.Answer:focus:hover{
+                background-color:#fff;
+                color:#2F3E7B;
+            }
+
+            .centered{
+                text-align:center;
+            }
+            .answered-correct{
+                background-color: rgba(89, 249, 89, 0.4);
+                -webkit-transition:background-color 0.3s ease-in-out;
+            }
+
+            .answered-incorrect{
+                background-color: rgba(249, 89 , 89, 0.4);
+                -webkit-transition:background-color 0.3s ease-in-out;
+            }            
+            button.btn.btn-primary.completeLecture {
+                margin-bottom: 20px;
+                width: 100%;
+                height: 100px;
+                font-size: 3em;
+                font-weight: 200;
+            } 
 
     </style>
 

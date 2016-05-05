@@ -31,7 +31,9 @@
                                                         </li>
                                                     <?php endfor; ?>
                                                 </form>
-                                                <button class="Answer" onclick="NextPart()">Answer</button>
+                                                <div class="centered">
+                                                    <button class="btn btn-primary Answer text-center" onclick="NextPart()">Answer</button>
+                                                </div>
                                             </ul>
                                         </div>
                                 <?php endfor; ?>
@@ -41,7 +43,7 @@
                 </div>
             </div>
             <div class="center">
-                <button class="endLecture">Lecture Finished</button>
+                <button class="btn btn-primary endLecture">Lecture Finished</button>
             </div>
         </div>
     </div>
@@ -52,7 +54,7 @@
 
 <script type="text/javascript">
     function NextPart() {
-        jQuery(".sakriveniDeo").first().fadeIn(1000).removeClass('sakriveniDeo');
+        jQuery(".sakriveniDeo").first().fadeIn().removeClass('sakriveniDeo');
     }
 </script>
 

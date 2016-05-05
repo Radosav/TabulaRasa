@@ -10,7 +10,7 @@
             <div class="panel panel-default col-md-12">
                 <div class="panel-heading row">
                     <div class="col-md-10">
-                        <h4>Dashboard</h4>
+                        <h4 class="dashboard">Dashboard</h4>
                     </div>
                     
                     <div class="col-md-2">
