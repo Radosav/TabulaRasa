@@ -31,7 +31,9 @@
                                                         </li>
                                                     <?php endfor; ?>
                                                 </form>
-                                                <button class="Answer" onclick="NextPart()">Answer</button>
+                                                <div class="centered">
+                                                    <button class="btn btn-primary Answer text-center" onclick="NextPart()">Answer</button>
+                                                </div>
                                             </ul>
                                         </div>
                                 <?php endfor; ?>
@@ -41,7 +43,7 @@
                 </div>
             </div>
             <div class="center">
-                <button class="endLecture sakriveniDeo">Lecture Finished</button>
+                <button class="btn btn-primary endLecture sakriveniDeo">Lecture Finished</button>
             </div>
         </div>
     </div>
@@ -55,6 +57,8 @@
         if(jQuery(".question-container:not(.sakriveniDeo):visible").last().find("input[type='radio'].correct").is(":checked")){
             jQuery(".sakriveniDeo").first().fadeIn(1000).removeClass('sakriveniDeo');
         }
+
+        jQuery(".sakriveniDeo").first().fadeIn().removeClass('sakriveniDeo');
     }
 </script>
 

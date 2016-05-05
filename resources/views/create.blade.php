@@ -37,23 +37,27 @@
                                                     <label for="correct[0][0][0]">Correct?</label>
                                                 </li>
                                             </ul>
-                                            <div class="form-group formControls">
-                                                <a class="btn btn-primary" onclick="addAnswer(0,0,this)">Add Answer</a>
+                                            <div class="form-group formControls centered">
+                                                <a class="btn btn-primary new" onclick="addAnswer(0,0,this)">Add Answer</a>
                                             </div>
                                         </div>
-                                        <div class="form-group formControls addQuestion">
-                                            <a class="btn btn-primary" onclick="addQuestion(0,this)">Add Question</a>
+                                        <div class="form-group formControls addQuestion centered">
+                                            <a class="btn btn-primary new" onclick="addQuestion(0,this)">Add Question</a>
                                         </div>
                                     </div>
                                 </li>
 
                                 <div class="form-group formControls formControls-Main">
-                                    <a class="btn btn-primary" onclick="addSelection()">Add Section</a>
-                                    <button type="submit" class="btn btn-primary pull-right">Complete</button>
+                                    <div class="centered">
+                                        <a class="btn btn-primary new" onclick="addSelection()">Add Section</a>
+                                    </div>
                                 </div>  
                             </ul>
                         </form>
                 </div>
+            </div>
+            <div class="centered">
+                    <button type="submit" class="btn btn-primary completeLecture">Complete</button>
             </div>
         </div>
     </div>
@@ -77,8 +81,8 @@
                 selection +=    '<input name="title['+i+']" type="text" placeholder="Subtitle" onfocus="this.placeholder =\'\' " onblur="this.placeholder = \'Subtitle\'"  class="form-control title lecture_subtitle"/>';
                 selection +=    '<textarea name="text['+i+']" class="form-control lecture_part" placeholder="Text"/>';
                 selection +=    '<div class="questions">'
-                selection +=        '<div class="form-group formControls addQuestion">';
-                selection +=            '<a class="btn btn-primary" onclick="addQuestion('+i+',this)">Add Question</a>';
+                selection +=        '<div class="form-group formControls addQuestion centered">';
+                selection +=            '<a class="btn btn-primary new" onclick="addQuestion('+i+',this)">Add Question</a>';
                 selection +=        '</div>';
                 selection +=    '</div>';
                 selection += '</li>';
@@ -94,8 +98,8 @@
                 question +=     '<p>Answers:</p>';
                 question +=     '<ul class="answers">';
                 question +=     '</ul>';
-                question +=     '<div class="form-group formControls">'
-                question +=         '<a class="btn btn-primary" onclick="addAnswer('+pid+','+qi+',this)">Add Answer</a>'
+                question +=     '<div class="form-group formControls centered">'
+                question +=         '<a class="btn btn-primary new" onclick="addAnswer('+pid+','+qi+',this)">Add Answer</a>'
                 question +=     '</div>'
                 question += '</div>';
             
