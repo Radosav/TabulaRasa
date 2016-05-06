@@ -314,6 +314,7 @@
     ul#selectable > li.form-group {
       //padding: 0 30px;
       border-bottom: 1px solid #eee;
+      margin-bottom:40px;
     }
 
     a.editLink {
@@ -334,7 +335,7 @@
     }
     .section-btn{
       margin-top:50px;
-      margin-left:60px;
+      
     }
     .ans-edit{
         margin-left:5px;

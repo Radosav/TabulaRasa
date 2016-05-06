@@ -110,11 +110,9 @@
                 selection +=    '<input name="title['+i+']" type="text" placeholder="Subtitle" onfocus="this.placeholder =\'\' " onblur="this.placeholder = \'Subtitle\'"  class="form-control title lecture_subtitle"/>';
                 selection +=    '<textarea name="text['+i+']" class="form-control lecture_part" placeholder="Text"/>';
                 selection +=    '<div class="questions">'
-                selection +=        '<div class="form-group formControls addQuestion">';
-                selection +=           '<div class="centered">'
+                selection +=        '<div class="form-group formControls addQuestion centered">';
                 selection +=            '<a class="btn btn-primary new" onclick="addQuestion('+i+',this)">Add Question</a>';
-                selection +=           '</div>'
-                selection +=        '</div>';
+                selection +=         '</div>'
                 selection +=    '</div>';
                 selection +=    '<a class="btn btn-primary deletion section-delete pull-right" onclick="deleteElement(this)">X</a>';
                 selection += '</li>';

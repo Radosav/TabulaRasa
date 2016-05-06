@@ -51,10 +51,10 @@
                                     </div>
                                 </li>
 
-                                <div class="form-group formControls formControls-Main">
-                                    <div class="centered">
+                                <div class="form-group formControls formControls-Main centered">
+
                                         <a class="btn btn-primary new" onclick="addSelection()">Add Section</a>
-                                    </div>
+
                                 </div>  
                             </ul>
                         </div>
