@@ -116,7 +116,7 @@
                 selection +=           '</div>'
                 selection +=        '</div>';
                 selection +=    '</div>';
-                selection +=    '<a class="btn btn-primary deletion question-delete pull-right" onclick="deleteElement(this)">X</a>';
+                selection +=    '<a class="btn btn-primary deletion section-delete pull-right" onclick="deleteElement(this)">X</a>';
                 selection += '</li>';
             jQuery(selection).insertBefore(".formControls-Main");
             CKEDITOR.replace('text['+i+']');
