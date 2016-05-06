@@ -46,7 +46,7 @@
         margin-bottom:10px;
     }
     .full-width-answer{
-        width:85%;
+        width:83%;
         margin-right:10px; 
         margin-bottom:10px;
     }
@@ -319,7 +319,26 @@
     a.editLink {
         margin-right: 5px; 
     }
-
+    .deletion{
+      font-size:12px;
+      font-weight:800;
+      margin-left:10px;
+    }
+    .question-delete{
+      margin-top:-30px;
+      margin-right:6px;
+    }
+    .section-delete{
+      margin-top:10px;
+      margin-right:15px;
+    }
+    .section-btn{
+      margin-top:50px;
+      margin-left:60px;
+    }
+    .ans-edit{
+        margin-left:5px;
+    }
 
 </style>
 
