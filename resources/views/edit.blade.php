@@ -17,6 +17,7 @@
                     <form method="POST" class="main-form" action="/lectures/store">
                         <ul id="selectable">
                             <input type="hidden" name="uid" value="<?php echo $user == null ? '' : $user->id; ?>">
+                            <input type="hidden" name="olid" value="<?php echo $lecture->id; ?>">
                             <div class="form-group">
                                 <input name="title[0]" type="text" placeholder="<?php echo $lecture->title; ?>" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Title'"  class="form-control title lecture_title" value="<?php echo $lecture->title; ?>"/>
                             </div>
@@ -24,7 +25,12 @@
                             <?php $lecutre_part_count = count($lecture->lecture_parts); ?>
                             <?php for ($i=0; $i < $lecutre_part_count; $i++): ?>
                                 <li class="form-group itteration-<?php echo $i; ?> selectable">
-                                    <input name="title[<?php echo $i; ?>]" type="text" placeholder="Subtitle" onfocus="this.placeholder =\'\' " onblur="this.placeholder = <?php echo $lecture->lecture_parts[$i]->title; ?>" value="<?php echo $lecture->lecture_parts[$i]->title; ?>" class="form-control title lecture_subtitle"/>
+                                    
+                                    <?php if ($i != 0): ?>
+                                        <input name="title[<?php echo $i; ?>]" type="text" placeholder="Subtitle" onfocus="this.placeholder =\'\' " onblur="this.placeholder = <?php echo $lecture->lecture_parts[$i]->title; ?>" value="<?php echo $lecture->lecture_parts[$i]->title; ?>" class="form-control title lecture_subtitle"/>
+                                    <?php endif ?>
+                                    
+
                                     <textarea name="text[<?php echo $i; ?>]" class="form-control lecture_part ckeditor" placeholder="Text"><?php echo $lecture->lecture_parts[$i]->text; ?></textarea>
                                     <div class="questions">
                                     <?php $question_count = count($lecture->lecture_parts[$i]->questions); ?>
@@ -39,15 +45,21 @@
                                             <?php for ($a=0; $a < $answer_count; $a++): ?>
                                             <?php $answer = $lecture->lecture_parts[$i]->questions[$q]->answers[$a]; ?>
                                                 <li class="answer">
-                                                    <input type="checkbox" class="correct" name="correct[<?php echo $i; ?>][<?php echo $q; ?>][<?php echo $a; ?>]" />
-                                                    <label for="correct[<?php echo $i; ?>][<?php echo $q; ?>][<?php echo $a; ?>]"/>
+                                                    <input type="checkbox" class="correct" name="correct[<?php echo $i; ?>][<?php echo $q; ?>][<?php echo $a; ?>]" <?php if ($lecture->lecture_parts[$i]->questions[$q]->answers[$a]->right) {
+                                                        echo "checked";
+                                                    } ?>/>
+                                                    <label for="correct[<?php echo $i; ?>][<?php echo $q; ?>][<?php echo $a; ?>]"></label>
                                                     <input class="answer-<?php echo $a; ?>" name="answer[<?php echo $i; ?>][<?php echo $q; ?>][<?php echo $a; ?>]" value ="<?php echo $answer->answer; ?>"></input>
+
+                                                    <a class="pull-right" onclick="deleteElement(this)">X</a>
                                                 </li>
                                             <?php endfor; ?>
                                             </ul>
                                             <div class="form-group formControls">
                                                 <a class="btn btn-primary" onclick="addAnswer(<?php echo $i; ?>,<?php echo $q; ?>,this)">Add Answer</a>
                                             </div>
+
+                                            <a class="pull-right" onclick="deleteElement(this)">X</a>
                                         </div>
 
                                     <?php endfor; ?>
@@ -55,6 +67,9 @@
                                     <div class="form-group formControls addQuestion">
                                         <a class="btn btn-primary" onclick="addQuestion(<?php echo $i; ?>,this)">Add Question</a>
                                     </div>
+                                    <?php if ($i != 0): ?>
+                                        <a class="pull-right" onclick="deleteElement(this)">X</a>
+                                    <?php endif; ?>
                                 </li>
                             <?php endfor; ?>
 
@@ -74,10 +89,10 @@
 
 @section('footer')
     <script type="text/javascript">
-        //CKEDITOR.replace('text[0]');
-    </script>
+        function deleteElement(el){
+            jQuery(el).parent().remove();
+        }
 
-    <script type="text/javascript">
         var i = 0;
         var qi = 0;
         function addSelection(){
@@ -90,6 +105,7 @@
                 selection +=            '<a class="btn btn-primary" onclick="addQuestion('+i+',this)">Add Question</a>';
                 selection +=        '</div>';
                 selection +=    '</div>';
+                selection +=    '<a class="pull-right" onclick="deleteElement(this)">X</a>';
                 selection += '</li>';
             jQuery(selection).insertBefore(".formControls-Main");
             CKEDITOR.replace('text['+i+']');
@@ -106,6 +122,7 @@
                 question +=     '<div class="form-group formControls">'
                 question +=         '<a class="btn btn-primary" onclick="addAnswer('+pid+','+qi+',this)">Add Answer</a>'
                 question +=     '</div>'
+                question +=    '<a class="pull-right" onclick="deleteElement(this)">X</a>';
                 question += '</div>';
             
             jQuery(question).insertBefore(jQuery(".itteration-"+pid).find(".addQuestion"));
@@ -117,6 +134,7 @@
                 answer +=   '<input class="answer-'+ai+'" name="answer['+pid+']['+qid+']['+ai+']"></input>';
                 answer +=   '<input type="checkbox" class="correct" name="correct['+pid+']['+qid+']['+ai+']" />';
                 answer +=   '<label for="correct['+pid+']['+qid+']['+ai+']">Correct?</label>';
+                answer +=    '<a class="pull-right" onclick="deleteElement(this)">X</a>';
                 answer +='</li>';
             jQuery(".question-"+qid).find(".answers").append(answer);
         }

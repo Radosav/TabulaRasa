@@ -316,6 +316,10 @@
       border-bottom: 1px solid #eee;
     }
 
+    a.editLink {
+        margin-right: 5px; 
+    }
+
 
 </style>
 

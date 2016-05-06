@@ -35,11 +35,14 @@
                                                     <input class="full-width-answer answer-0" name="answer[0][0][0]"></input>
                                                     <input type="checkbox" class="correct" name="correct[0][0][0]" />
                                                     <label for="correct[0][0][0]">Correct?</label>
+
+                                                    <a class="pull-right" onclick="deleteElement(this)">X</a>
                                                 </li>
                                             </ul>
                                             <div class="form-group formControls centered">
                                                 <a class="btn btn-primary new" onclick="addAnswer(0,0,this)">Add Answer</a>
                                             </div>
+                                            <a class="pull-right" onclick="deleteElement(this)">X</a>
                                         </div>
                                         <div class="form-group formControls addQuestion centered">
                                             <a class="btn btn-primary new" onclick="addQuestion(0,this)">Add Question</a>
@@ -72,7 +75,13 @@
 
 
 
+
+
     <script type="text/javascript">
+        function deleteElement(el){
+            jQuery(el).parent().remove();
+        }
+
         var i = 0;
         var qi = 0;
         function addSelection(){
@@ -85,6 +94,7 @@
                 selection +=            '<a class="btn btn-primary new" onclick="addQuestion('+i+',this)">Add Question</a>';
                 selection +=        '</div>';
                 selection +=    '</div>';
+                selection +=    '<a class="pull-right" onclick="deleteElement(this)">X</a>';
                 selection += '</li>';
             jQuery(selection).insertBefore(".formControls-Main");
             CKEDITOR.replace('text['+i+']');
@@ -101,6 +111,7 @@
                 question +=     '<div class="form-group formControls centered">'
                 question +=         '<a class="btn btn-primary new" onclick="addAnswer('+pid+','+qi+',this)">Add Answer</a>'
                 question +=     '</div>'
+                question +=    '<a class="pull-right" onclick="deleteElement(this)">X</a>';
                 question += '</div>';
             
             jQuery(question).insertBefore(jQuery(".itteration-"+pid).find(".addQuestion"));
@@ -112,6 +123,7 @@
                 answer +=   '<input class="full-width-answer answer-'+ai+'" name="answer['+pid+']['+qid+']['+ai+']"></input>';
                 answer +=   '<input type="checkbox" class="correct" name="correct['+pid+']['+qid+']['+ai+']" />';
                 answer +=   '<label for="correct['+pid+']['+qid+']['+ai+']">Correct?</label>';
+                answer +=    '<a class="pull-right" onclick="deleteElement(this)">X</a>';
                 answer +='</li>';
             jQuery(".question-"+qid).find(".answers").append(answer);
         }

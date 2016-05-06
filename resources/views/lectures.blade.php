@@ -31,6 +31,7 @@
                                         <li id="lecture-<?php echo $lecture->id; ?>" class="list-group-item">
                                             <a  href="lecture/<?php echo $lecture->id ?>">{{$lecture->title}}</a>
                                             <a class="pull-right" onclick="deleteLecture({{$lecture->id}})">X</a>
+                                            <a class="pull-right editLink" onclick="editLecture({{$lecture->id}})">Edit</a>
                                         </li>
                                 @endforeach
                             </ul>
@@ -56,6 +57,10 @@
                     jQuery('#lecture-' + lid).remove();
                 }
             })
+        }
+
+        function editLecture(lid){
+            window.location = "/lecture/" + lid + "/edit";
         }
     </script>
 @endsection

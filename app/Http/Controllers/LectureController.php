@@ -49,6 +49,12 @@ class LectureController extends Controller
         $questions = $request->question;
         $answers = $request->answer;
         $correct = $request->correct;
+
+        if (isset($request->olid)) {
+            if (Lecture::find($request->olid)) {
+                Lecture::find($request->olid)->delete();
+            }
+        }
         
         $lecture = new Lecture;
 
@@ -103,53 +109,6 @@ class LectureController extends Controller
        
         return redirect('lecture/'.$lecture->id);
     }
-
-    public function save(Request $request){
-        
-        $titles = $request->title;
-        $texts = $request->text;
-        $questions = $request->question;
-        $answers = $request->answer;
-        $correct = $request->correct;
-        var_dump($correct);die();
-
-        $lecture = Lecture::find($request->lecture_id());
-
-        $lecture->title = $titles[0];
-        
-        $lecture->save();
-        
-        $count = count($titles);
-        for($i = 0; $i < $count; $i++) {
-            $lecture_part = new Lecture_part(
-                ['title' => $titles[$i],'text'=> $texts[$i]]
-            );
-            $lecture->lecture_parts()->save($lecture_part);
-            if (!empty($questions[$i][0])) {
-                $questions_count = count($questions[$i]);
-                for($q = 0; $q < $questions_count; $q++) {
-                    $question = new Question(['question' => $questions[$i][$q]]);
-                    $lecture_part->questions()->save($question);
-                    if (!empty($answers[$i][$q][0])) {
-                        $answer_count = count($answers[$i][$q]);
-                        for($a = 0; $a < $answer_count; $a++) {
-                            $answer = new Answer(['answer' => $answers[$i][$q][$a]]);
-                            $question->answers()->save($answer);
-                        }
-                    }
-                    $lecture_part->questions()->save($question);
-                }
-                $lecture->lecture_parts()->save($lecture_part);
-            }
-        }
-        $lecture->save();
-        if ($request->uid != null) {
-            User::find($request->uid)->lectures()->save($lecture);
-        }
-       
-        return redirect('lecture/'.$lecture->id);
-    }
-
 
     public function destory(Request $request){
         if(Lecture::find($request->id)->delete()){
